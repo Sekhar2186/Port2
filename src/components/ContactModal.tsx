@@ -19,9 +19,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
     if (!message.trim()) return;
 
     setStatus('submitting');
-    
+
     const formData = new FormData();
-    formData.append('access_key', '20a69267-0040-4122-8619-abf794f3efe7');
+    formData.append('access_key', '347fe238-8223-417a-b111-a4d93a9dd15b');
     formData.append('from_name', name || 'Portfolio Visitor');
     formData.append('email', email || 'not-provided@example.com');
     formData.append('feedback', message);
@@ -33,7 +33,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         body: formData,
       });
       const data = await response.json();
-      
+
       if (data.success) {
         setStatus('success');
         setStatusMsg('Message sent successfully! I will get back to you soon.');
